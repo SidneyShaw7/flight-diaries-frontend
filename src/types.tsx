@@ -14,13 +14,18 @@ export enum Visibility {
 }
 
 export interface Diary {
-  id: number
-  date: string
-  weather: Weather
-  visibility: Visibility
-  comment: string
+  id: number;
+  date: string;
+  weather: Weather | undefined;
+  visibility: Visibility | undefined;
+  comment: string;
 }
 
-export type NewDiary = Omit<Diary, 'id'>
+export interface DiaryFormProps {
+  setDiaries: React.Dispatch<React.SetStateAction<Diary[]>>;
+  diaries: Diary[];
+}
 
-export type NonSensitiveDiaryEntry = Omit<Diary, 'comment'>
+export type NewDiary = Omit<Diary, 'id'>;
+
+export type NonSensitiveDiaryEntry = Omit<Diary, 'comment'>;
