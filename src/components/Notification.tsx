@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { NotificationFormProps } from '../types';
 
-const Notification = () => {
-  const [notification, setNotification] = useState('');
+const Notification = ({ notification, setNotification }: NotificationFormProps) => {
   if (notification) {
     setTimeout(() => {
       setNotification('');
     }, 3000);
   }
 
-  return <div style={{ color: 'red' }}>{notification}</div>;
+  return (
+    notification && console.log(notification),
+    (<div style={{ color: 'red' }}>{notification}</div>)
+  );
 };
 
 export default Notification;

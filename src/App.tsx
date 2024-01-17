@@ -6,6 +6,7 @@ import DiaryForm from './components/DiaryForm';
 
 function App() {
   const [diaries, setDiaries] = useState<Diary[]>([]);
+  const [notification, setNotification] = useState('');
 
   useEffect(() => {
     getAllDiaries()
@@ -25,7 +26,12 @@ function App() {
 
   return (
     <div>
-      <DiaryForm diaries={diaries} setDiaries={setDiaries} />
+      <DiaryForm
+        diaries={diaries}
+        setDiaries={setDiaries}
+        notification={notification}
+        setNotification={setNotification}
+      />
       <Diaries diaries={diaries} />
     </div>
   );

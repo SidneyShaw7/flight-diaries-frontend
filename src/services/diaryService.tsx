@@ -10,8 +10,6 @@ export const getAllDiaries = async () => {
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
       return { error: error.response.data.message || 'An error occurred' };
-      // console.log(error.status);
-      // console.error(error.response);
     }
   }
 };
@@ -22,9 +20,7 @@ export const createDiary = async (object: NewDiary) => {
     return res.data;
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
-      return { error: error.response.data.message || 'An error occurred' };
-      // console.log(error.status);
-      // console.error(error.response);
+      return { error: error.response.data || 'An error occurred', console: console.log(error.response.data)};
     }
   }
 };

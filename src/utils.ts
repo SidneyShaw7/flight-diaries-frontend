@@ -52,7 +52,7 @@ const parseVisibility = (visibility: unknown): Visibility => {
   return visibility;
 };
 
-const toNewDiaryEntry = (object: unknown): NewDiary => {
+const isNewDiary = (object: unknown): NewDiary => {
   if (!object || typeof object !== 'object' || object === null) {
     throw new Error('Incorrect or missing data');
   }
@@ -76,4 +76,4 @@ const toNewDiaryEntry = (object: unknown): NewDiary => {
   throw new Error('Incorrect data: a field is missing.');
 };
 
-export default toNewDiaryEntry;
+export default isNewDiary;

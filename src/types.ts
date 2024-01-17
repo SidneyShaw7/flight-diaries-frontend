@@ -16,8 +16,8 @@ export enum Visibility {
 export interface Diary {
   id: number;
   date: string;
-  weather: Weather | undefined;
-  visibility: Visibility | undefined;
+  weather: Weather;
+  visibility: Visibility;
   comment: string;
 }
 
@@ -28,6 +28,7 @@ export interface DiaryFormProps {
 
 export interface NotificationFormProps {
   setNotification: React.Dispatch<React.SetStateAction<string>>;
+  notification: string;
 }
 
 export type NewDiary = Omit<Diary, 'id'>;
