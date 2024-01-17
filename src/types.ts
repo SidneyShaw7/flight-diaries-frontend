@@ -26,6 +26,10 @@ export interface DiaryFormProps {
   diaries: Diary[];
 }
 
+export interface NotificationFormProps {
+  setNotification: React.Dispatch<React.SetStateAction<string>>;
+}
+
 export type NewDiary = Omit<Diary, 'id'>;
 
 export type NonSensitiveDiaryEntry = Omit<Diary, 'comment'>;

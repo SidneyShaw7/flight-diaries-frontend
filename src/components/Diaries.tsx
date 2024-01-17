@@ -1,4 +1,4 @@
-import { Diary } from '../types'
+import { Diary } from '../types';
 
 const Diaries = ({ diaries }: { diaries: Diary[] }) => {
   return (
@@ -12,11 +12,11 @@ const Diaries = ({ diaries }: { diaries: Diary[] }) => {
               visibility: {d.visibility} <br />
               weather: {d.weather}
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Diaries
+export default Diaries;

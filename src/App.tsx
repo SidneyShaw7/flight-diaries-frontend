@@ -8,10 +8,21 @@ function App() {
   const [diaries, setDiaries] = useState<Diary[]>([]);
 
   useEffect(() => {
-    getAllDiaries().then((data) => {
-      setDiaries(data);
-    });
-  });
+    getAllDiaries()
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setDiaries(data);
+        } else {
+          console.error('Received data is not an array or is undefined');
+          setDiaries([]);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching diaries:', error);
+        setDiaries([]);
+      });
+  }, []);
+
   return (
     <div>
       <DiaryForm diaries={diaries} setDiaries={setDiaries} />
